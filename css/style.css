@@ -1,0 +1,642 @@
+/**
+ * Template Name: Nebbia
+ * Description: Responsive Under Construction Template
+ * Author: Infinity Motion
+ * Template URL: http://www.infinity-motion.com/nebbia/
+ * Author URL: http://themeforest.net/user/InfinityMotion
+ * Version: 1.0
+ */
+
+/* ==================================================================
+ * Table of Contents:
+ *
+ * 1.0 - Basic document styles
+ * 2.0 - UI View
+ * 3.0 - Typography
+ * 4.0 - Appear Animation
+ * 5.0 - Forms
+ * 6.0 - Button
+ * 7.0 - Preloader
+ * 8.0 - Full-screen image background
+ * 9.0 - Full-screen youtube background
+ * 10.0 - Section
+ * 11.0 - Header
+ * 12.0 - Footer
+ * 13.0 - Countdown
+ * 14.0 - Responsive
+================================================================== */
+
+/* ==================================================================
+	 1.0 Basic document styles
+================================================================== */
+
+html, body {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	color: #535353;
+	font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+/* ==================================================================
+	 2.0 UI View
+================================================================== */
+
+.ui-view.__blocked {
+	overflow: hidden;
+}
+
+/* ==================================================================
+	 3.0 Typography
+================================================================== */
+
+.color-white {
+	color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	line-height: 1;
+}
+
+h1 small, h2 small, h3 small,
+h4 small, h5 small, h6 small {
+	color: inherit;
+	font-size: inherit;
+	font-weight: 100;
+}
+
+p {
+    font-size: 13px;
+}
+
+a {
+	-webkit-transition: color .3s ease-in-out, background-color .3s ease-in-out;
+	-moz-transition: color .3s ease-in-out, background-color .3s ease-in-out;
+	-ms-transition: color .3s ease-in-out, background-color .3s ease-in-out;
+	-o-transition: color .3s ease-in-out, background-color .3s ease-in-out;
+	transition: color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+a:focus {
+	outline: 0 none;
+}
+
+/* ==================================================================
+	 4.0 Appear Animation
+================================================================== */
+
+[data-appear-animation] {
+	opacity: 0;
+}
+
+/* ==================================================================
+	 5.0 Forms
+================================================================== */
+
+.form-group {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.form-control {
+	border: 1px solid #d3d3d3;
+	border-radius: 0;
+	box-shadow: none;
+	background-color: transparent;
+	color: #888;
+	font-size: 13px;
+	padding: 0 20px;
+	height: 42px;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+textarea.form-control {
+	padding-top: 10px;
+	resize: none;
+}
+
+.form-control:focus {
+	box-shadow: none;
+}
+
+.form-control::-moz-placeholder {
+	color: #888;
+	opacity: 1
+}
+
+.form-control:-ms-input-placeholder {
+	color: #888;
+}
+
+.form-control::-webkit-input-placeholder {
+	color: #888;
+}
+
+.form-message {
+    position: absolute;
+	margin: 0;
+	padding: 3px 0 0 0;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 18px;
+	text-align: right;
+}
+
+/*  5.1 Form error state
+-------------------------------------------------------------- */
+
+.form-control.__error {
+	border-color: #a94442;
+}
+
+.form-message.__error {
+	color: #a94442;
+}
+
+/*  5.2 Contact form
+-------------------------------------------------------------- */
+
+.form.__contact-us {
+	padding: 25px 0;
+}
+
+.form.__contact-us textarea.form-control {
+	height: 186px;
+}
+
+/* ==================================================================
+	 6.0 Button
+================================================================== */
+
+.btn {
+	position: relative;
+	border-radius: 0;
+	border: 0;
+	color: #fff;
+	font-size: 16px;
+	min-width: 180px;
+	padding: 10px 30px;
+	text-decoration: none;
+
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.btn:hover,
+.btn:active {
+	color: #fff;
+	background-color: #2f2f2f;
+	box-shadow: none;
+}
+
+.btn:focus,
+.btn:focus:active {
+	color: #fff;
+	outline: 0 none;
+}
+
+.btn .fa {
+	display: none;
+}
+
+.btn.__loading .fa {
+	display: inline-block;
+}
+
+/* ==================================================================
+	 7.0 Preloader
+================================================================== */
+
+.preloader {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 1;
+	visibility: visible;
+	background: #2f2f2f;
+	z-index: 1001;
+}
+
+.preloader.__visible {
+  display: block;
+}
+
+.preloader .fa {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -20px;
+	width: 40px;
+	height: 40px;
+	color: #fff;
+	font-size: 40px;
+}
+
+/* ==================================================================
+	 10.0 Section
+================================================================== */
+
+.section {
+	position: relative;
+    overflow: hidden;
+	padding: 50px 0;
+	background-color: #fff;
+}
+
+.section_bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	z-index: 3;
+}
+
+.section_bg:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(10, 10, 10, .4) url(../img/bg/dotted-over.png) 0 0 repeat;
+}
+
+.section_bg.__bg-0 {
+    background-image: url(../img/bg/bg-0.jpg);
+}
+
+.section_bg.__bg-1 {
+	background-image: url(../img/bg/bg-1.jpg);
+}
+
+.section_bg.__bg-2 {
+    background-image: url(../img/bg/bg-2.jpg);
+}
+
+.section .container {
+	position: relative;
+	z-index: 5;
+}
+
+.section_header {
+	margin-bottom: 25px;
+}
+
+/*  10.1 Home
+-------------------------------------------------------------- */
+.section.__home {
+    padding: 69px 0 0 0;
+}
+
+.section.__home .section_bg {
+    background-attachment: scroll;
+}
+
+.section.__home .container {
+    display: table;
+    height: 400px;
+}
+
+.home {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.home h1 {
+    margin-top: 0;
+    font-size: 57px;
+}
+
+.home p {
+    font-size: 19px;
+    font-weight: 100;
+}
+
+/*  10.2 About
+-------------------------------------------------------------- */
+
+.about {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.about p {
+    text-align: justify;
+}
+
+/*  10.3 Call To Action
+-------------------------------------------------------------- */
+
+.call-to-action {
+    color: #fff;
+    text-align: center;
+}
+
+.call-to-action_text {
+    display: inline-block;
+    margin: 0 20px 0 0;
+    vertical-align: middle;
+}
+
+/*  10.4 Services
+-------------------------------------------------------------- */
+
+.service {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	text-align: center;
+}
+
+.service_icon {
+	font-size: 50px;
+}
+
+.service p {
+    text-align: justify;
+}
+
+.service .icon-round {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.service .icon-round img {
+    height: 100%;
+    width: auto;
+}
+
+.section.__products .icon-round {
+    margin-bottom: 35px;
+}
+
+/*  10.5 Partners
+-------------------------------------------------------------- */
+
+.partners {
+    padding: 25px 0 25px;
+}
+
+.partners ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+}
+
+.partners li {
+    padding: 0;
+    border-left: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.partners li:first-child {
+    border-left-color: #fff;
+}
+
+.partners ul:last-child li {
+    border-bottom-color: #fff;
+}
+
+.partners img {
+    opacity: .6;
+    width: 100%;
+    cursor: pointer;
+
+    -webkit-transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    -ms-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+}
+
+.partners img:hover {
+    opacity: 1;
+}
+
+/*  10.6 Contacts
+-------------------------------------------------------------- */
+
+.contacts {
+    color: #fff;
+    text-align: center;
+}
+
+.contacts_phone {
+    display: inline-block;
+    margin: 0 0 25px 0;
+    padding: 5px 15px;
+    font-size: 30px;
+    font-weight: 700;
+    background-color: rgba(1, 160, 199, .3);
+}
+
+.contacts_phone small {
+    color: inherit;
+    font-size: inherit;
+    font-weight: 100;
+}
+
+.contacts_email {
+    margin: 0;
+    font-size: 24px;
+}
+
+/*  10.7 Testimonial
+-------------------------------------------------------------- */
+
+.testimonial_wrap {
+    padding: 25px 0;
+}
+
+.testimonial {
+    color: #fff;
+    text-align: center;
+}
+
+.testimonial_text {
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.testimonial_text .fa {
+    position: relative;
+    top: -5px;
+    color: #01a0c7;
+}
+
+.testimonial_author {
+    display: inline-block;
+    margin: 15px 0 0 0;
+    padding: 0 10px;
+    font-size: 12px;
+    line-height: 19px;
+    background: #01a0c7;
+    border-radius: 5px;
+}
+
+.testimonial_wrap .owl-controls {
+    opacity: 0;
+
+    -webkit-transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    -ms-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+}
+
+.testimonial_wrap:hover .owl-controls {
+    opacity: 1;
+}
+
+.testimonial_wrap .owl-prev,
+.testimonial_wrap .owl-next {
+    position: absolute;
+    margin: -15px 0 0 0;
+    top: 50%;
+    text-indent: -9999px;
+
+    -webkit-transition: border-color .3s ease-in-out;
+    -moz-transition: border-color .3s ease-in-out;
+    -ms-transition: border-color .3s ease-in-out;
+    -o-transition: border-color .3s ease-in-out;
+    transition: border-color .3s ease-in-out;
+}
+
+.testimonial_wrap .owl-prev:hover {
+    border-right-color: #fff;
+}
+
+.testimonial_wrap .owl-next:hover {
+    border-left-color: #fff;
+}
+
+.testimonial_wrap .owl-prev {
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid rgba(223, 223, 223, .5);
+}
+
+.testimonial_wrap .owl-next {
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid rgba(223, 223, 223, .5);
+}
+
+/* ==================================================================
+	11.0 Header
+================================================================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+	background-color: rgba(70, 70, 70, 0.9);
+	z-index: 10;
+}
+
+.navbar-toggle {
+	margin: 13px 15px;
+	background-color: rgba(0, 0, 0, .3);
+	border-radius: 0;
+}
+
+.navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+
+.navbar-brand {
+	height: auto;
+}
+
+.navbar-phone {
+    float: left;
+    margin: 0 0 0 20px;
+    padding: 0 0 0 35px;
+    color: #fff;
+    line-height: 66px;
+    border-left: 1px solid #6c6c6c;
+}
+
+.navbar-phone span {
+    font-size: 20px;
+}
+
+.navbar-nav {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.navbar-nav > li > a {
+    padding-top: 0;
+    padding-bottom: 0;
+	color: #fff;
+	font-size: 12px;
+    line-height: 69px;
+	text-transform: uppercase;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus:hover,
+.navbar-nav > li.active > a:focus,
+.navbar-nav > li.active > a {
+	color: #fff;
+	background-color: #2f2f2f;
+}
+
+.navbar-nav > li > a:focus {
+	background-color: transparent;
+}
+
+/* ==================================================================
+	 12.0 Footer
+================================================================== */
+
+.footer {
+	padding: 20px 0;
+	color: #888;
+	background: #2f2f2f;
+}
+
+.copy-mini {
+    margin: 0;
+    line-height: 30px;
+}
